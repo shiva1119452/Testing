@@ -1,0 +1,6 @@
+services:
+  testing:
+    image: testing:1.0
+    container_name: testing-app
+    ports:
+      - "8080:8080"
