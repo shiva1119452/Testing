@@ -2,6 +2,7 @@ package com.example.controller;
 
 import java.util.List;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +12,7 @@ import com.example.service.DepartmentService;
 
 @RestController
 @RequestMapping("/api/departments")
+@Slf4j
 public class DepartmentController {
 
     private final DepartmentService departmentService;
@@ -22,12 +24,14 @@ public class DepartmentController {
     // http://localhost:8080/api/departments
     @GetMapping
     public List<Department> getAllDepartments() {
+        log.info("Fetching all departments");
         return departmentService.getAllDepartments();
     }
     
     // http://localhost:8080/api/departments/test
     @GetMapping("/test")
     public String test() {
-    	return "Testing Docker!!!";
+        log.info("Testing Docker!!!");
+        return "Testing Docker!!!";
     }
 }
