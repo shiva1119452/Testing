@@ -34,4 +34,10 @@ public class DepartmentController {
         log.info("Testing Docker!!!");
         return "Testing Docker!!!";
     }
+
+    @GetMapping("/test/CICD")
+    public String testCICD() {
+        log.info("Testing CICD!!!");
+        return "Testing CICD!!!";
+    }
 }
